@@ -10,6 +10,7 @@ app.use(express.json());
 //Controllers
 app.use('/api/users', usersController);
 
-app.listen(8080, () => {
-  console.log('They see me rollin...on port 8080...');
-});	
+app.set("port", process.env.PORT || 8080);
+app.listen(app.get("port"), () => {
+  console.log(`✅ PORT: ${app.get("port")} 🌟`);
+});
