@@ -2,6 +2,12 @@ const express = require("express")
 const router = express.Router()
 const User = require('../models/User')
 
+
+// USER FOO
+router.get('/foo', (req, res) => {
+  res.json({foo: 'bar'})
+})
+
 // GET ALL USERS
 router.get('/', (req, res) => {
   User.find().then(users => res.json(users))
@@ -71,9 +77,6 @@ router.delete('/:id', (req, res) => {
   User.findByIdAndDelete(req.params.id).then(deletedUser => res.json(deletedUser))
 })
 
-// USER FOO
-router.get('/foo', (req, res) => {
-  req.json({foo: 'bar'})
-})
+
 
 module.exports = router
