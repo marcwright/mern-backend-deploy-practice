@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 // set the uri for connecting to our local mongodb
 let mongoURI = ''
 
-if (process.env.NODE_ENV === "production") {
+if (process.env.MONGODB_URI) {
   mongoURI = process.env.MONGODB_URI;
 } else {
   mongoURI = "mongodb://localhost/mern-lab";
