@@ -2,7 +2,7 @@
 const mongoose = require('mongoose')
 
 // set the uri for connecting to our local mongodb
-const mongoURI = ''
+let mongoURI = ''
 
 if (process.env.NODE_ENV === "production") {
   mongoURI = process.env.MONGODB_URI;
