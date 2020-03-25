@@ -71,4 +71,9 @@ router.delete('/:id', (req, res) => {
   User.findByIdAndDelete(req.params.id).then(deletedUser => res.json(deletedUser))
 })
 
+// USER FOO
+router.get('/foo', (req, res) => {
+  req.json({foo: 'bar'})
+})
+
 module.exports = router
